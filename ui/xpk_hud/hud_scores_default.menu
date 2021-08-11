@@ -1,0 +1,415 @@
+#include "ui/menudef.h"
+#define CA_PLAYERS rect 3 2 21 11	visible 1	style WINDOW_STYLE_FILLED
+#define CA_PLAYERS_RED background "ui/assets/score/ca_score_red.tga"
+#define CA_PLAYERS_BLUE background "ui/assets/score/ca_score_blu.tga"
+//******************************************** TOP LEFT SCORE BOX **************
+/*
+menuDef {
+    	name "Score Frame"
+    		fullScreen MENU_FALSE
+    	visible 1
+    	rect 2 0 32 256
+
+	    itemDef {
+     	        name "scorebox left"
+	            rect 0 0 32 64 
+	            visible 1
+	            backcolor 1 1 1 .8
+	            style WINDOW_STYLE_FILLED
+	            background "ui/assets/hud/scoreboxl.tga"
+	            }
+
+	    itemDef {
+     	        name "scorebox middle"
+	            rect 32 0 143 64 
+	            visible 1
+	            backcolor 1 1 1 .8
+	            style WINDOW_STYLE_FILLED
+	            background "ui/assets/hud/scoreboxm.tga"
+	            }
+
+	    itemDef {
+     	        name "scorebox right"
+	            rect 175 0 8 64 
+	            visible 1
+ 	            backcolor 1 1 1 .8
+	            style WINDOW_STYLE_FILLED
+	            background "ui/assets/hud/scoreboxr.tga"
+	            }
+  
+     itemDef {
+	           name "game type icon"
+	           rect 6 7 19 19
+	           ownerdraw CG_GAME_TYPE_ICON
+	           visible 1
+	           }	
+
+	  itemDef {
+            name "Win Limit"
+            rect 7 37 40 12
+	          visible 1
+	          forecolor 0 0 0 1
+	          textscale .26
+	          ownerdraw CG_CAPFRAGLIMIT 
+	          }
+	
+	  itemDef {
+		        name "Timer"
+		        rect 15 61 50 12
+		        visible 1
+		        textstyle ITEM_TEXTSTYLE_SHADOWED
+		        forecolor 1 1 1 .9
+		        textscale .28
+		        ownerdraw CG_LEVELTIMER
+	          }
+
+	  itemDef {
+		        name "timer Icon shadow"
+		        rect 0 49 14 14
+		        style WINDOW_STYLE_FILLED
+		        backcolor 0 0 0 .7
+		        background "icons/icon_time.tga"
+		        visible 1
+	          }
+
+	  itemDef {
+		        name "timer Icon"
+		        rect -1 48 14 14
+		        style WINDOW_STYLE_FILLED
+		        backcolor .7 .7 .7 .7
+		        background "icons/icon_time.tga"
+		        visible 1
+	          }
+}
+*/
+//**************************************** RED TEAM BAR - TOP ******************
+// IF RED TEAM IS 1ST PLACE
+// "TEAM HAS FLAG" FLASHING ALERT - CLAN ARENA SURVIVORS COUNT - RED FLAG STATUS
+menuDef {
+    	  name "Red Frame Team"
+    	  	fullScreen MENU_FALSE
+    	  visible 1	
+    	  rect 5 7 32 256
+    	  ownerdrawflag CG_SHOW_IF_RED_IS_FIRST_PLACE
+
+	     itemDef {
+     	         name "Team has flag alert Left"
+               rect 0 0 128 16 
+	             visible 1
+	             style WINDOW_STYLE_FILLED
+	             background "ui/assets/hud/rteambgl.tga"
+	             ownerdrawflag CG_SHOW_RED_TEAM_HAS_BLUEFLAG
+	             }
+
+	     itemDef {
+     	         name "Team has flag alert Right"
+	             rect 20 0 128 16 
+	             visible 1
+	             style WINDOW_STYLE_FILLED
+	             background "ui/assets/hud/rteambgr.tga"
+	             ownerdrawflag CG_SHOW_RED_TEAM_HAS_BLUEFLAG
+	             }
+
+				itemDef {
+					CA_PLAYERS
+					CA_PLAYERS_RED
+				}
+
+    	 itemDef {
+	             name "red Clan survivors count"
+   	           rect 14 11 136 40
+   	           visible 1
+	             textscale .18
+	             forecolor 1 1 1 .65
+	             ownerdraw CG_RED_CLAN_PLYRS  	             
+	             ownerdrawflag CG_SHOW_CLAN_ARENA	   
+               decoration            
+	             }
+
+	    itemDef {
+		          name "red flag status icon"
+		          rect 15 1 13 13
+		          visible 1
+		          ownerdrawflag CG_SHOW_CTF                       
+		          ownerdraw CG_RED_FLAGSTATUS
+	            }
+}
+
+//**************************************** RED TEAM BAR - BOTTOM ***************
+// IF RED TEAM IS 2ND PLACE
+// "TEAM HAS FLAG" FLASHING ALERT - CLAN ARENA SURVIVORS COUNT - RED FLAG STATUS
+menuDef {
+    	  name "Red Team Bar"
+    	  	fullScreen MENU_FALSE
+    	  visible 1
+    	  rect 5 24 32 256
+    	  ownerdrawflag CG_SHOW_IF_BLUE_IS_FIRST_PLACE
+
+	     itemDef {
+     	         name "Team has flag alert Left"
+	             rect 0 0 128 16 
+	             visible 1
+	             style WINDOW_STYLE_FILLED
+	             background "ui/assets/hud/rteambgl.tga"
+	             ownerdrawflag CG_SHOW_RED_TEAM_HAS_BLUEFLAG
+	             }
+
+	     itemDef {
+     	         name "Team has flag alert Right"
+	             rect 20 0 128 16 
+	             visible 1
+	             style WINDOW_STYLE_FILLED
+	             background "ui/assets/hud/rteambgr.tga"
+	             ownerdrawflag CG_SHOW_RED_TEAM_HAS_BLUEFLAG
+	             }
+	
+				itemDef {
+					CA_PLAYERS
+					CA_PLAYERS_RED
+				}
+
+    	 itemDef {
+	             name "red Clan survivors count"
+   	           rect 14 11 136 40
+   	           visible 1
+	             textscale .18
+	             forecolor 1 1 1 0.65
+	             ownerdraw CG_RED_CLAN_PLYRS  	             
+	             ownerdrawflag CG_SHOW_CLAN_ARENA	   
+               decoration            
+	             }
+	    
+	    itemDef {
+		          name "red flag status icon"
+		          rect 15 1 13 13
+		          visible 1
+		          ownerdrawflag CG_SHOW_CTF                       
+		          ownerdraw CG_RED_FLAGSTATUS
+	            }
+}
+//*************************************** BLUE TEAM BAR - TOP ******************
+// IF BLUE TEAM IS 1ST PLACE
+//"TEAM HAS FLAG" FLASHING ALERT - CLAN ARENA SURVIVORS COUNT - BLUE FLAG STATUS
+menuDef {
+    	  name "Blue Team Bar"
+    	  	fullScreen MENU_FALSE
+    	  visible 1	
+    	  rect 5 7 32 256
+    	  ownerdrawflag CG_SHOW_IF_BLUE_IS_FIRST_PLACE
+      
+	      itemDef {
+     	          name "Team has flag alert Left"
+	              rect 0 0 128 16 
+	              visible 1
+	              style WINDOW_STYLE_FILLED
+	              background "ui/assets/hud/bteambgl.tga"
+	              ownerdrawflag CG_SHOW_BLUE_TEAM_HAS_REDFLAG
+	              }
+
+	      itemDef {
+     	          name "Team has flag alert Right"
+	              rect 20 0 128 16 
+	              visible 1
+	              style WINDOW_STYLE_FILLED
+	              background "ui/assets/hud/bteambgr.tga"
+	              ownerdrawflag CG_SHOW_BLUE_TEAM_HAS_REDFLAG
+	              }
+
+				itemDef {
+					CA_PLAYERS
+					CA_PLAYERS_BLUE
+				}
+    	  
+        itemDef {
+	              name "blue Clan survivors count"
+   	            rect 14 11 136 40
+   	            visible 1
+	              textscale .18
+	              forecolor 1 1 1 0.65
+	              ownerdraw CG_BLUE_CLAN_PLYRS  	              
+	              ownerdrawflag CG_SHOW_CLAN_ARENA	 
+                decoration               
+	              }	
+
+	      itemDef {
+		            name "blue flag status icon"
+		            rect 15 1 13 13
+		            visible 1
+		            ownerdrawflag CG_SHOW_CTF                    	
+		            ownerdraw CG_BLUE_FLAGSTATUS
+	              }
+
+}
+
+//************************************ BLUE TEAM BAR - BOTTOM ******************
+// IF BLUE TEAM IS 2ND PLACE
+//"TEAM HAS FLAG" FLASHING ALERT - CLAN ARENA SURVIVORS COUNT - BLUE FLAG STATUS
+menuDef {
+    	  name "Blue Team Bar"
+    	  	fullScreen MENU_FALSE
+    	  visible 1	
+    	  rect 5 24 32 256
+    	  ownerdrawflag CG_SHOW_IF_RED_IS_FIRST_PLACE
+
+	     itemDef {
+     	         name "Team has flag alert Left"
+	             rect 0 0 128 16 
+	             visible 1
+	             style WINDOW_STYLE_FILLED
+	             background "ui/assets/hud/bteambgl.tga"
+	             ownerdrawflag CG_SHOW_BLUE_TEAM_HAS_REDFLAG
+	             }
+
+	     itemDef {
+     	         name "Team has flag alert Right"
+	             rect 20 0 128 16 
+	             visible 1
+	             style WINDOW_STYLE_FILLED
+	             background "ui/assets/hud/bteambgr.tga"
+	             ownerdrawflag CG_SHOW_BLUE_TEAM_HAS_REDFLAG
+	             }
+
+				itemDef {
+					CA_PLAYERS
+					CA_PLAYERS_BLUE
+				}
+
+    	 itemDef {
+	             name "blue Clan survivors count"
+   	           rect 14 11 136 40
+   	           visible 1
+	             textscale .18
+	             forecolor 1 1 1 0.65
+	             ownerdraw CG_BLUE_CLAN_PLYRS  
+	             ownerdrawflag CG_SHOW_CLAN_ARENA
+               decoration               	             
+	             }
+
+	     itemDef {
+		           name "blue flag status icon"
+		           rect 15 1 13 13
+		           visible 1
+		           ownerdrawflag CG_SHOW_CTF                    	
+		           ownerdraw CG_BLUE_FLAGSTATUS
+	             }
+}
+
+//******************************* PLAYER SCORE - BACKGROUND HIGHLIGHT **********
+menuDef {
+    	  name "Score Background Highlight"
+    	  visible 1	
+    	  rect 6 7 32 256
+
+        // if player is 1st place
+	      itemDef {
+     	          name "score highlight left"
+	              rect 0 0 16 16 
+	              visible 1
+	              style WINDOW_STYLE_FILLED	  
+	              background "ui/assets/hud/teamonl.tga"                            
+	              ownerdraw CG_TEAM_COLORIZED
+	              ownerdrawflag CG_SHOW_IF_PLYR_IS_FIRST_PLACE
+	              decoration
+	              }
+
+	      itemDef {
+     	          name "score highlight middle"
+	              rect 16 0 115 16 
+	              visible 1
+	              style WINDOW_STYLE_FILLED	              
+	              ownerdraw CG_TEAM_COLORIZED
+	              background "ui/assets/hud/teamonm.tga"	              
+	              ownerdrawflag CG_SHOW_IF_PLYR_IS_FIRST_PLACE
+	              decoration
+	              }
+
+	      itemDef {
+     	          name "score highlight right"
+	              rect 131 0 16 16 
+	              visible 1
+ 	              ownerdraw CG_TEAM_COLORIZED
+	              ownerdrawflag CG_SHOW_IF_PLYR_IS_FIRST_PLACE
+	              style WINDOW_STYLE_FILLED
+	              background "ui/assets/hud/teamonr.tga"
+	              decoration
+	              }
+
+	      // if player is 2nd place
+	      itemDef {
+     	          name "score highlight left"
+	              rect 0 17 16 16 
+	              visible 1
+	              style WINDOW_STYLE_FILLED	  
+	              background "ui/assets/hud/teamonl.tga"                            
+	              ownerdraw CG_TEAM_COLORIZED
+	              ownerdrawflag CG_SHOW_IF_PLYR_IS_NOT_FIRST_PLACE
+	              decoration
+	              }
+
+	      itemDef {
+     	          name "score highlight middle"
+	              rect 16 17 115 16 
+	              visible 1
+	              style WINDOW_STYLE_FILLED
+	              background "ui/assets/hud/teamonm.tga"	              
+	              ownerdraw CG_TEAM_COLORIZED
+	              ownerdrawflag CG_SHOW_IF_PLYR_IS_NOT_FIRST_PLACE
+	              decoration
+	              }
+
+	      itemDef {
+     	          name "score highlight right"
+	              rect 131 17 16 16 
+	              visible 1
+	              style WINDOW_STYLE_FILLED
+	              background "ui/assets/hud/teamonr.tga"
+	              ownerdraw CG_TEAM_COLORIZED
+	              ownerdrawflag CG_SHOW_IF_PLYR_IS_NOT_FIRST_PLACE
+	              decoration
+	              }
+}
+
+
+//************************************************************ SCORES **********
+
+menuDef {
+    	  name "scores"
+    	  	fullScreen MENU_FALSE
+    	  visible 1	
+    	  rect 12 0 120 40
+    	  
+        itemDef {
+	              name "1st place"
+  	            visible 1
+      	        rect 0 19 136 40
+		            textscale .22      	        
+	              ownerdraw CG_1ST_PLACE_SCORE
+	              decoration
+	              }
+
+       itemDef {
+	             name "2nd place"
+   	           visible 1	   
+   	           rect 0 36 136 40    
+		           textscale .22              
+	             ownerdraw CG_2ND_PLACE_SCORE
+	             decoration
+	             }
+
+}
+
+//******************************************************** OBITUARIES **********	
+// who killed who, what weapon they used
+menuDef {
+	      name "obituaries area"
+	      visible 1
+	      rect 6 440 65 12
+ 
+        itemDef {
+	              name "obituaries"
+   	            rect 0 0 65 12
+   	            visible 1
+	              textscale .18
+	              ownerdraw CG_PLAYER_OBIT	              
+	              }
+}

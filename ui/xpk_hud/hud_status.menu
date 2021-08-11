@@ -1,0 +1,168 @@
+#include "ui/menudef.h"
+
+//	AMMO FRAME 
+menuDef {
+	name "ammoFrame"
+	fullScreen MENU_FALSE
+	visible MENU_TRUE	
+	rect 538 446 95 26
+	
+	itemDef {
+		name "scoreboxl2"
+		rect -1 -4 6 48
+		visible 1
+		decoration
+		backcolor 1 1 1 0.4
+		style 1
+		background "ui/assets/hud/scoreboxl2a.tga"
+	}
+	itemDef {
+		name "scorebox2"
+		rect 5 -4 85 48
+		visible 1
+		decoration
+		backcolor 1 1 1 0.4
+		style 1
+		background "ui/assets/hud/scoreboxm2.tga"
+	}
+	itemDef {
+		name "scorebox3"
+		rect 90 -4 6 48
+		visible 1
+		decoration
+		backcolor 1 1 1 0.4
+		style 1
+		background "ui/assets/hud/scoreboxr2.tga"
+	}
+}
+//	AMMO
+menuDef {
+	name "Ammo"
+	fullScreen MENU_FALSE
+	visible MENU_TRUE
+	rect 550 450 95 26//266 428 99 36// - bump up value for bottom weapon bar
+	
+	itemDef {
+		name "i"
+		rect 0 2 16 16
+		visible 1
+		decoration
+		ownerdraw CG_PLAYER_AMMO_ICON2D
+	}
+
+	itemDef {
+		name "a"
+		rect 15 -5 63 22
+		visible 1
+		textalign 0
+		decoration
+		textstyle 2
+		forecolor 1 1 1 1
+		textscale .425
+		ownerdraw CG_PLAYER_AMMO_VALUE
+		addColorRange -999 5 1 0 0 1
+	}
+}
+
+//	HEALTH / ARMOR FRAME
+menuDef {
+	name "playerFrame"
+	fullScreen MENU_FALSE
+	visible MENU_TRUE	
+	rect 5 446 95 26
+	
+	itemDef {
+		name "splitBox"
+		rect 88 6 1 15
+		visible 1
+		decoration
+		backcolor 1 1 1 0.3
+		style WINDOW_STYLE_FILLED
+	} 
+	
+	itemDef {
+		name "scoreboxl2"
+		rect -1 -4 6 48
+		visible 1
+		decoration
+		ownerdraw CG_TEAM_COLORIZED
+		backcolor 1 1 1 0.6
+		style 1
+		background "ui/assets/hud/scoreboxl2a.tga"
+	}
+	itemDef {
+		name "scorebox2"
+		rect 5 -4 147 48
+		visible 1
+		decoration
+		ownerdraw CG_TEAM_COLORIZED
+		backcolor 1 1 1 0.6
+		style 1
+		background "ui/assets/hud/scoreboxm2.tga"
+	}
+	itemDef {
+		name "scorebox3"
+		rect 152 -4 6 48
+		visible 1
+		decoration
+		ownerdraw CG_TEAM_COLORIZED
+		backcolor 1 1 1 0.6
+		style 1
+		background "ui/assets/hud/scoreboxr2.tga"
+	}
+}
+
+//	HEALTH
+
+menuDef {
+	name "Player"
+	fullScreen MENU_FALSE
+	visible MENU_TRUE
+	rect 15 450 95 26
+
+	itemDef {
+		name "a"
+		rect 0 2 16 16
+		visible 1
+		decoration
+		ownerdraw CG_PLAYER_HEAD
+	}
+	
+	itemDef {
+		name "healthok"
+		rect 15 -5 63 22
+		visible 1
+		textalign 0
+		decoration
+		textstyle 2
+		forecolor 1 1 1 1
+		textscale .425
+		ownerdraw CG_PLAYER_HEALTH
+		addColorRange -999 25 1 0 0 1
+	//	addColorRange 26 100 1 .75 0 1
+	//	addColorRange 101 999 1 1 1 1
+	}
+}
+
+//	ARMOR
+menuDef {
+		name "Armor"
+		fullScreen MENU_FALSE
+		visible MENU_TRUE	
+		rect 95 450 95 26
+
+	itemDef {
+		name "armor2"
+		rect 0 -5 65 22
+		visible 1
+		decoration
+		textstyle 2	
+		textscale .425
+		textalign 3
+		forecolor 1 .75 0 1
+		ownerdraw CG_PLAYER_ARMOR_VALUE 
+//	    addColorRange -999 25 .67 0 0 1
+//    	addColorRange 26 100  1 .75 0 1
+//    	addColorRange 101 999 1 0.5 0.5 1
+	}
+}

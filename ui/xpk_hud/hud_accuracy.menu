@@ -1,0 +1,35 @@
+#include "ui/menudef.h"
+
+//**Accuracy
+menuDef {
+		name "Accuracy"
+		fullScreen MENU_FALSE
+		visible MENU_TRUE
+		rect 485 448 95 26
+		
+		
+/* 		itemDef {
+			name "medal_accuracy"
+			decoration
+			visible 1
+			rect 0 0 23 23
+			style 1
+			backcolor 1 1 1 0.4
+			background "ui/assets/medal_accuracy.tga"
+			visible MENU_TRUE
+			textscale 0.22
+		} */
+ 		itemDef {
+			name "accuracy_meter"		
+			decoration
+			visible 1
+			ownerdraw CG_ACCURACY
+			rect 0 0 23 23
+			textstyle 2
+			visible MENU_TRUE
+			textscale 0.18
+			forecolor 1 1 1 0.4
+			backcolor 1 1 1 0.4
+			background "ui/assets/medal_accuracy.tga"
+		} 
+}

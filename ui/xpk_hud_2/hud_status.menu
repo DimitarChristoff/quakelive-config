@@ -1,0 +1,269 @@
+#include "ui/menudef.h"
+
+//	AMMO
+menuDef {
+	name "Ammo"
+	fullScreen MENU_FALSE
+	visible MENU_TRUE
+	rect 295 420 95 26
+	
+	itemDef {
+		name "i"
+		rect 19 -6 12 12
+		visible 1
+		decoration
+		ownerdraw CG_PLAYER_AMMO_ICON2D
+	}
+	
+	itemDef {
+		name "a"
+		rect 0 -2 50 22
+		visible 1
+		textalign 0
+		decoration
+		textstyle 3
+		forecolor 1 1 1 0.8
+		textscale .22
+		ownerdraw CG_PLAYER_AMMO_VALUE
+		addColorRange -999 5 1 0 0 1
+	}
+}
+
+
+
+
+//	HEALTH
+menuDef {
+	name "Player"
+	fullScreen MENU_FALSE
+	visible MENU_TRUE
+	rect 225 420 100 26
+
+	itemDef {
+		name "healthCritical"
+		rect 0 0 16 16
+		//ownerdraw CG_TEAM_COLORIZED
+		backcolor 1 1 1 0.5
+		visible 1
+		decoration
+		style 1		
+		background "ui/assets/hud/health.tga"
+	}
+	
+	itemDef {
+		name "healthok"
+		rect 24 -6 45 22
+		visible 1
+		textalign 0
+		decoration
+		textstyle 3
+		forecolor 1 1 1 0.75
+		textscale .42
+		ownerdraw CG_PLAYER_HEALTH
+		ownerdrawflag CG_SHOW_HEALTHOK
+		addColorRange 50 99 1 .75 0 0.75
+		addColorRange -999 50 1 0 0 0.75
+	}
+
+
+	itemDef {
+		name "healthCriticalTextShadow"
+		rect 25 -5 45 22
+		visible 1
+		textalign 0
+		decoration
+		//textstyle 1
+		forecolor 0 0 0 0.75
+		textscale .42
+		ownerdraw CG_PLAYER_HEALTH
+		ownerdrawflag CG_SHOW_HEALTHCRITICAL
+		
+	}
+
+	itemDef {
+		name "healthCriticalText"
+		rect 24 -6 45 22
+		visible 1
+		textalign 0
+		decoration
+		textstyle 1
+		forecolor 1 0 0 0.75
+		textscale .42
+		ownerdraw CG_PLAYER_HEALTH
+		ownerdrawflag CG_SHOW_HEALTHCRITICAL
+	}	
+}
+
+
+//	ARMOR
+menuDef {
+		name "Armor"
+		fullScreen MENU_FALSE
+		visible MENU_TRUE	
+		rect 346 420 95 26  //rect 346 420 95 26
+
+
+	itemDef {
+		name "a"
+		//rect 52 -14 16 21
+		rect 52 0 16 16
+		visible 1
+		style 1
+		decoration
+		//ownerdraw CG_PLAYER_ARMOR_ICON2D
+		backcolor 1 1 1 0.5
+		background "ui/assets/hud/armor.tga"
+	}
+	
+	itemDef {
+		name "armor2"
+		rect 0 -6 45 22
+		visible 1
+		decoration
+		textstyle 3	
+		textscale .42
+		textalign 3
+		forecolor 1 1 1 0.75
+		ownerdraw CG_PLAYER_ARMOR_VALUE 
+	    addColorRange -999 99 1 .75 0 0.75
+//    	addColorRange 50 100  1 1 1 0.75
+//    	addColorRange 101 999 0.7 0.92 0.48 0.75
+	}
+}
+
+//	ACCURACY
+menuDef {
+		name "Accuracy"
+		fullScreen MENU_FALSE
+		visible MENU_TRUE
+		rect 585 416 95 26
+		
+		
+  		itemDef {
+			name "medal_accuracy"
+			ownerdraw CG_SELECTED_PLYR_ACCURACY
+			decoration
+			visible 1
+			rect 4 17 24 7
+			style 1
+			visible MENU_TRUE
+			forecolor 1 1 1 0.6
+			textscale 0.22
+			textstyle 2
+			addColorRange 0 15 1 0 0 1
+		}  
+		
+ 		itemDef {
+			name "accuracy_medal"		
+			decoration
+			visible 1
+			ownerdraw CG_ACCURACY
+			rect 34 4 16 16
+//			textstyle 2
+			textscale 0.0
+//			forecolor 1 1 1 0.4
+			backcolor 1 1 1 0.4
+			background "ui/assets/medal_accuracy.png"
+		}
+}
+
+
+// TEAM INDICATOR
+menuDef {
+	name "RedFrameTeam"
+	fullScreen MENU_FALSE
+	visible MENU_TRUE	
+	rect 0 440 640 48
+	ownerdrawflag CG_SHOW_ANYTEAMGAME
+	
+	itemDef {
+		name "team_shader"
+		rect 0 0 640 42
+		visible 1
+		ownerdrawflag CG_SHOW_IF_PLYR_IS_ON_BLUE
+		decoration
+		backcolor 0 0 1 0.2
+		style 1
+		background "ui/assets/hud/chatm.tga"
+	}
+
+	itemDef {
+		name "team_shader"
+		rect 0 0 640 42
+		visible 1
+		ownerdrawflag CG_SHOW_IF_PLYR_IS_ON_RED
+		decoration
+		backcolor 1 0 0 0.2
+		style 1
+		background "ui/assets/hud/chatm.tga"
+	}
+
+	//clan arena count
+	itemDef {
+		name "clanArena"
+		rect 33 2 21 11
+		visible 1
+		backcolor 1 1 1 1
+		decoration	
+		style 1
+		ownerdrawflag CG_SHOW_CLAN_ARENA
+		background "ui/assets/score/ca_score_red.tga"
+	}
+    	itemdef {
+	    name "redClanPlayers"
+	    ownerdrawflag CG_SHOW_CLAN_ARENA
+	    ownerdraw CG_RED_CLAN_PLYRS  
+   	    rect 45 11 136 40
+   	    visible 1
+	    textscale .18
+	    forecolor 1 1 1 0.65
+	    decoration
+	}
+	itemDef {
+		name "f"
+		rect 36 1 13 13
+		visible 1
+		bordercolor 1 1 1 1
+		decoration	
+		style 3
+		ownerdrawflag CG_SHOW_HARVESTER                 
+		background "icons/skull_red.tga"
+	}
+	itemDef {
+		name "f"
+		rect 36 1 13 13
+		visible 1
+		decoration
+		ownerdrawflag CG_SHOW_CTF                       
+		ownerdraw CG_RED_FLAGSTATUS
+	}
+	
+}
+
+// example for PAT
+// this is the item def for the 1st place text
+menuDef {
+	name "scores"
+	fullScreen MENU_FALSE
+	visible MENU_TRUE	
+	rect 40 0 120 40
+	itemdef {
+	    name "1stplace"
+	    ownerdraw CG_1ST_PLACE_SCORE
+   	    rect 0 19 136 40
+   	    visible 1
+		textscale .22
+	    decoration
+	}
+
+	// example for PAT
+	// this is the item def for the 2nd place text
+    itemdef {
+	    name "2ndplace"
+	    ownerdraw CG_2ND_PLACE_SCORE
+   	    rect 0 36 136 40
+   	    visible 1
+		textscale .22
+	    decoration
+	}
+}

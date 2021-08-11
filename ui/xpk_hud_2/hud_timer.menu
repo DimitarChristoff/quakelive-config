@@ -1,0 +1,103 @@
+#include "ui/menudef.h"
+#define DEFAULTS_ITEM decoration visible 1
+#define DEFAULTS_MENU visible 1
+#define MENU_DEFAULT fullScreen MENU_FALSE visible MENU_TRUE	
+#define ITEM_DEFAULT visible 1 decoration style WINDOW_STYLE_FILLED 
+
+// ** GAME TIMER ** //
+menuDef {
+	name "Timer1"
+	fullScreen MENU_FALSE
+	visible 1
+	//ownerdrawflag CG_SHOW_IF_NOT_WARMUP
+
+	itemDef {
+		name "levelTimer"
+		textalign 2
+		style 0
+		rect 430 338 50 12
+		visible 1
+		textstyle 2
+		decoration
+		forecolor 1 1 1 0.5
+		textscale .2
+		ownerdraw CG_LEVELTIMER
+		ownerdrawflag CG_SHOW_IF_NOT_WARMUP
+	}
+
+	itemDef {
+		name "levelTimer"
+		textalign 2
+		style 0
+		rect 430 338 50 12
+		visible 1
+		textstyle 2
+		decoration
+		forecolor 1 1 1 0.15
+		textscale .2
+		ownerdraw CG_LEVELTIMER
+		ownerdrawflag CG_SHOW_IF_WARMUP
+	}	
+}
+
+
+// ** GAME TIMER ** //
+	menuDef {
+	    name "Timer1"
+		fullScreen MENU_FALSE
+		visible 1	
+		rect 297 11 100 14 //347 33
+		ownerdrawflag CG_SHOW_IF_NOT_WARMUP
+		
+/* 		itemDef {
+			name "scoreboxl2"
+			rect 0 -3 5 38
+			visible 1
+			decoration
+			backcolor 1 1 1 0.2
+			style 1
+			background "ui/assets/hud/scoreboxl2a.tga"
+		}
+		itemDef {
+			name "scorebox2"
+			rect 5 -3 75 38
+			visible 1
+			decoration
+			backcolor 1 1 1 0.2
+			style 1
+			background "ui/assets/hud/scoreboxm2.tga"
+		}
+		itemDef {
+			name "scorebox3"
+			rect 80 -3 5 38
+			visible 1
+			decoration
+			backcolor 1 1 1 0.2
+			style 1
+			background "ui/assets/hud/scoreboxr2.tga"
+		} */
+
+		itemDef {
+			name "timerIcon"
+			rect 0 -1 16 16
+			style 1
+			backcolor 1 1 1 0.5
+			textstyle 3
+			background "icons/icon_time.tga"
+			visible 1
+			decoration
+		}
+
+		itemDef {
+			name "levelTimer"
+			rect 22 15 100 12
+			ITEM_DEFAULT
+			textalign 2
+			textstyle 3
+			textscale 0.425
+			forecolor 1 1 1 .75			
+			ownerdraw CG_LEVELTIMER
+		}
+
+
+	}

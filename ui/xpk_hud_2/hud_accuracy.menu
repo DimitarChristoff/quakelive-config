@@ -1,0 +1,57 @@
+#include "ui/menudef.h"
+
+//	ACCURACY
+menuDef {
+		name "Accuracy"
+		fullScreen MENU_FALSE
+		visible MENU_TRUE
+		rect 10 416 95 26
+		
+		
+  		itemDef {
+			name "medal_accuracy"
+			ownerdraw CG_SELECTED_PLYR_ACCURACY
+			decoration
+			visible 1
+			rect 28 15 23 7
+			style 1
+			visible MENU_TRUE
+			forecolor 1 1 1 0.6
+			textscale 0.18
+			textstyle 2
+			addColorRange 0 15 1 0 0 1
+		}  
+		
+ 		itemDef {
+			name "accuracy_medal"		
+			decoration
+			visible 1
+			ownerdraw CG_ACCURACY
+			rect 0 0 23 23
+//			textstyle 2
+			textscale 0.0
+//			forecolor 1 1 1 0.4
+			backcolor 1 1 1 0.4
+			background "ui/assets/medal_accuracy.png"
+		}
+}
+
+/* menuDef {
+	name mapStatus
+	fullScreen MENU_FALSE
+	visible MENU_TRUE
+	rect 0 0 640 480	
+	
+	itemDef {
+		name mapname
+		ownerdraw CG_MAP_NAME
+		textscale .2
+		style 0	
+		rect 0 20 640 10 
+		textalign 3		
+		backcolor 0 0 0 0
+		forecolor 0.8 0.8 0.8 1
+		visible 1 
+		decoration	  
+	}
+} */
